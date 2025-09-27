@@ -59,6 +59,22 @@ color:black;
 }
 
 
+
+
+.parent-grid{
+            display: grid;
+            grid-template-columns:repeat(2, 1fr);
+            grid-template-rows:repeat(3, 1fr);
+            width: 315px;
+            grid-template-areas:
+            "Sidebar1 Main SideBar2"
+            "Sidebar3 Main SideBar4"
+            ;
+}
+
+
+
+
 @media (max-width: 768px){
     .nav-menu{
         display: none;
