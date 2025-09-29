@@ -11,7 +11,7 @@ burger.addEventListener('click', () => {
 });
 
 function cFunction(){
-  alert("Follow our instagram for more timley updates");
+  alert("Follow our instagram for more timley updates @Cubuffsrugby");
 }
 //for the three size changing image boxes that have no images yet
 const tripbs = document.querySelectorAll('.tripb');
