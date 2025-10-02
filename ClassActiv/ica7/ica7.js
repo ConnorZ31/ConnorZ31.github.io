@@ -53,7 +53,7 @@ function toggleTheme() {
   const currentTheme = localStorage.getItem('userTheme') || 'light';
   // console.log("theme works");
 
-  // Toggle theme
+  // Toggle between the themes with light as default
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
   // Set the new theme to whatever the storage has or the default
@@ -65,8 +65,8 @@ function setTheme(theme) {
   document.body.className = theme;
 }
 
-// // On page load, apply saved theme
-// window.addEventListener('load', function () {
-//   const savedTheme = localStorage.getItem('userTheme') || 'light';
-//   setTheme(savedTheme);
-// });
+// when the page loads it loads the saved theme from local storage
+window.addEventListener('load', function () {
+  const savedTheme = localStorage.getItem('userTheme') || 'light';
+  setTheme(savedTheme);
+});
