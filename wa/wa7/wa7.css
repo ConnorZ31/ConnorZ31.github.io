@@ -152,7 +152,19 @@ h1{
 
     button {
       margin-top: 0.5rem;
+      border-radius: 5px;
     }
+    #language-toggle {
+  margin-bottom: 10px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#language-toggle:hover {
+  background-color: #0056b3;
+}
 
 
 @media (max-width: 768px){

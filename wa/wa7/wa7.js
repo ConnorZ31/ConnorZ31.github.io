@@ -79,3 +79,49 @@ const emailInput = document.getElementById('emailInput');
     });
 
     window.addEventListener('DOMContentLoaded', showStoredEmail);
+
+    const translations = {
+  es: {
+    mensrugb: "CU Boulder Rugby Masculino",
+    meet: "Conoce al equipo",
+    comm: "Comunidad",
+    events: "Eventos",
+    cont: "Contactar",
+    theme:"Tema",
+    enter: "Introduce tu Email para recibir actualizaciones",
+    save: "Ahorrar",
+    clear: "Borrar Email"
+
+  },
+  en: {
+    mensrugb: "CU Boulder Mens Rugby",
+    meet: "Meet the Team",
+    comm: "Community",
+    events: "Events",
+    cont: "Contact",
+    theme:"Theme",
+    enter: "Enter your email for updates",
+    save: "Save",
+    clear: "Clear Email"
+  },
+};
+
+let currentLang = "en";
+
+document.getElementById("language-toggle").addEventListener("click", () => {
+  currentLang = currentLang === "en" ? "es" : "en";
+  switchLanguage(currentLang);
+});
+
+function switchLanguage(lang) {
+  const elements = document.querySelectorAll("[data-translate]");
+
+  elements.forEach((el) => {
+    const key = el.getAttribute("data-translate");
+    el.textContent = translations[lang][key];
+  });
+
+  // Update button label
+  document.getElementById("language-toggle").textContent =
+    lang === "en" ? "Español" : "English";
+}
