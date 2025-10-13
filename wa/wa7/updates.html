@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    body {
+    font-family: sans-serif;
+      padding: 2rem;
+    }
+
+    .box {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      width: 300px;
+      border-radius: 8px;
+    }
+
+    .email-display {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <label for="emailInput">Enter your email for updates:</label><br>
+    <input type="email" id="emailInput" placeholder="you@example.com" /><br>
+    <button id="saveBtn">Save Email</button>
+    <button id="clearBtn">Clear Email</button>
+
+    <div class="email-display" id="displayEmail"></div>
+  </div>
+
+  <script>
+    const emailInput = document.getElementById('emailInput');
+    const saveBtn = document.getElementById('saveBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const displayEmail = document.getElementById('displayEmail');
+
+    function showStoredEmail() {
+      const storedEmail = localStorage.getItem('userEmail');
+      if (storedEmail) {
+        displayEmail.textContent = `Stored Email: ${storedEmail}`;
+      } else {
+        displayEmail.textContent = '';
+      }
+    }
+    saveBtn.addEventListener('click', () => {
+      const email = emailInput.value.trim();
+      if (email) {
+        localStorage.setItem('userEmail', email);
+        showStoredEmail();
+        emailInput.value = '';
+      } else {
+        alert('Please enter a valid email.');
+      }
+    });
+
+    clearBtn.addEventListener('click', () => {
+      localStorage.removeItem('userEmail');
+      showStoredEmail();
+    });
+
+    window.addEventListener('DOMContentLoaded', showStoredEmail);
+  </script>
+</body>
+</html>
