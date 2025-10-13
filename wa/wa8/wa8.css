@@ -1,0 +1,202 @@
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    padding:1rem;
+    background-color:burlywood;
+}
+.nav-menu{
+    display: flex;
+    gap: 3vw;
+}
+.nav-toggle{
+    display:none;
+    justify-content: center;
+    flex-direction: column;
+    padding: .5rem;
+    gap: 3px;
+
+}
+.nav-brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.nav-toggle span{
+    display: none;
+    width: 10px;
+    height: 2px;
+    padding: .1rem ;
+    background-color: white;
+    border-radius: 10px;
+}
+.nav-toggle:hover span{
+    background-color: black;
+}
+.nav-toggle:hover{
+    background-color: white;
+}
+.nav-menu2.show {
+  display:none;
+  flex-direction: column;
+position: absolute;
+  right:0;
+  width: 100px;
+  background-color: burlywood;
+  padding: .5rem ;
+
+}
+.nav-menu2{
+    display: none;
+}
+a{
+text-decoration: none;
+color:black;
+         
+}
+ a:visited{
+            color:black;
+}
+ul {
+    list-style: none;
+    padding-left:none;
+}
+h1{
+    padding: 4px;
+}
+.light{
+    background-color: white;
+}
+.dark{
+    background-color:black;
+}
+ p {
+            font-size:14;
+            margin:20px
+        }
+h2{
+    padding: 8px
+}
+h3{
+    padding: 12px
+}
+h4{
+    padding: 14px
+}
+
+.parent-grid{
+            display: grid;
+            grid-template-columns:.1fr 4fr .1fr;
+            grid-template-areas:
+            "SideBar1 Mid SideBar2"
+            ;
+}
+
+        .left{
+          background-color:black;
+          grid-area: SideBar1;
+          height:1000px;
+        }
+        .right{
+            background-color:black;
+            grid-area:SideBar2;
+          height:1000px;
+        }
+        .middle{
+            background-color: antiquewhite;
+            grid-area:Mid;
+             height:1000px;
+        }
+.center-grid{
+            display: grid;
+            grid-template-columns:1fr;
+            grid-template-areas:
+            "image1"
+            "image2"
+            "image3"
+            ;
+}
+.tripb{
+    height: 100px;
+}
+.tripb.expanded{
+    height: 300px;
+}
+
+    #one{
+        background-color: #f2bd29;
+        grid-area:image1;
+    }
+    #one:hover{
+        background-color: lightblue;
+    }
+    #two{
+        background-color: #a6811c;
+        grid-area:image3;
+    }
+    #two:hover{
+        background-color: lightblue;
+    }
+    #three{
+        background-color:#d1a324;
+        grid-area:image2;
+    }
+    #three:hover{
+        background-color: lightblue;
+    }
+    label {
+      padding: 2rem;
+      color:white;
+    }
+
+    .box {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      width: 300px;
+      border-radius: 8px;
+    }
+
+    .email-display {
+      margin-top: 1rem;
+      font-weight: bold;
+      color:white;
+    }
+
+    button {
+      margin-top: 0.5rem;
+      border-radius: 5px;
+    }
+    #language-toggle {
+  margin-bottom: 10px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#language-toggle:hover {
+  background-color: #0056b3;
+}
+
+
+@media (max-width: 768px){
+    .nav-menu{
+        display: none;
+    }
+    .nav-toggle{
+        display:flex;
+        background-color: black;
+    }
+    .nav-toggle span{
+        display:flex;
+    }
+    .nav-menu2.show{
+        display: flex;
+    }
+    .parent-grid{
+        grid-template-columns: 0px 1fr 0px;
+    }
+    .right, .left{
+        display:none
+    }
+}

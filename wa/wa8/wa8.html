@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="wa8.css">
+</head>
+<body>
+
+<nav class="main-nav">
+  <div class="nav-brand" data-translate="mensrugb">CU Boulder Mens Rugby</div>
+           <button class="nav-toggle" id="burger" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-menu" id="nav-menu">
+    <li><a href="#home" data-translate="meet">Meet the Team</a></li>
+    <li><a href="#events" data-translate="events">Events</a></li>
+  </ul>
+</nav>
+    <ul class="nav-menu2" id="nav-menu2">
+   <li><a href="#home" data-translate="meet">Meet the Team</a></li>
+    <li><a href="#events" data-translate="events">Events</a></li>
+  </ul>
+
+  <button onclick="cFunction()">Click Me</button>
+  <button id="theme" type="button" data-translate="theme">Theme</button>
+  <button id="language-toggle">Español</button>
+
+<div class="parent-grid">
+  <div class="left"></div>
+  <div class="middle">
+        <div class="center-grid">
+          <div id="one" class="tripb"></div>
+          <div id="two"class="tripb"></div>
+          <div id="three"class="tripb"></div>
+        </div>
+        <h2>Welcome to the CU mens Rugby website! </h2>
+        <p>We are a collection of young ambitious atheltes that were looking for something more extreme. If you like running through people or think you would come and check it out by the Lower Athletic Feilds every day at 6.</p>
+        <p>Size Doesn't Matter. If you think youre too small you're not. Anyone can play, everyone has a role, come try out and have some fun.</p>
+        <h3>Contact Us</h3>
+        <p>If you want to reach out before hand and get a better idea of what is in store for you, you can reach out to our reruitment guys Matt and Chris at their email blank@hotmail.com.
+          They will be more than happy to explain everything about rugby to you and the team dynamics, all that good stuff.
+        </p>
+      </div>
+  <div class="right"></div>
+</div>
+<div class="box">
+    <label for="emailInput"data-translate="enter">Enter your email for updates:</label>
+    <input type="email" id="emailInput" placeholder="you@something.com" />
+    <button id="saveBtn"data-translate="save">Save Email</button>
+    <button id="clearBtn"data-translate="clear">Clear Email</button>
+
+    <div class="email-display" id="displayEmail"></div>
+  </div>
+
+
+ <script src="wa8.js" defer></script>
+</body>
+</html>
