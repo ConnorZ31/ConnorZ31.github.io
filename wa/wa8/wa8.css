@@ -83,7 +83,9 @@ h3{
 h4{
     padding: 14px
 }
-
+img{
+padding: 8px;
+}
 .parent-grid{
             display: grid;
             grid-template-columns:.1fr 4fr .1fr;
@@ -95,17 +97,17 @@ h4{
         .left{
           background-color:black;
           grid-area: SideBar1;
-          height:1000px;
+          height:1200px;
         }
         .right{
             background-color:black;
             grid-area:SideBar2;
-          height:1000px;
+          height:1200px;
         }
         .middle{
             background-color: antiquewhite;
             grid-area:Mid;
-             height:1000px;
+             height:1400px;
         }
 .center-grid{
             display: grid;
@@ -128,21 +130,21 @@ h4{
         grid-area:image1;
     }
     #one:hover{
-        background-color: lightblue;
+        background-color: #f2bd61;
     }
     #two{
         background-color: #a6811c;
         grid-area:image3;
     }
     #two:hover{
-        background-color: lightblue;
+        background-color: #a88f4b;
     }
     #three{
         background-color:#d1a324;
         grid-area:image2;
     }
     #three:hover{
-        background-color: lightblue;
+        background-color: #d1a754;
     }
     label {
       padding: 2rem;

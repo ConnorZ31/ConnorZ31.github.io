@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="wa8.css">
+</head>
+<body>
+
+<nav class="main-nav">
+  <div class="nav-brand" data-translate="mensrugb">CU Boulder Mens Rugby</div>
+           <button class="nav-toggle" id="burger" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-menu" id="nav-menu">
+    <li><a href="#home" data-translate="meet">Meet the Team</a></li>
+    <li><a href="#events" data-translate="events">Events</a></li>
+  </ul>
+</nav>
+    <ul class="nav-menu2" id="nav-menu2">
+   <li><a href="#home" data-translate="meet">Meet the Team</a></li>
+    <li><a href="#events" data-translate="events">Events</a></li>
+  </ul>
+
+  <button onclick="cFunction()">Click Me</button>
+  <button id="theme" type="button" data-translate="theme">Theme</button>
+  <button id="language-toggle">Español</button>
+
+<div class="parent-grid">
+  <div class="left"></div>
+  <div class="middle">
+    <h1>Events</h1>
+    <h2>Matches</h2>
+    <img src="../../img/Screenshot 2025-10-12 200801.png" alt="2025 Match Schedule"height="400"></img>
+    <p>This Season the team is taking on some challenging oppenents like Air Force and CSU. The Team is confident in their ability to perservere and win something from the matches even if they lose.</p>
+    <h3>Current Record</h3>
+    <p>As of October 4th the team is 2-2 after a tough loss to Utah.</p>
+    <p>CU vs Mesa Final:19-17 Win!</p>
+    <p>CU vs Wyoming Final:17-24 Loss.</p>
+    <p>CU vs Air Force Final: 32-17 Win!</p>
+    <p>Utah vs CU Final: 14-26 Loss.</p>
+      </div>
+  <div class="right"></div>
+</div>
+<div class="box">
+    <label for="emailInput"data-translate="enter">Enter your email for updates:</label>
+    <input type="email" id="emailInput" placeholder="you@something.com" />
+    <button id="saveBtn"data-translate="save">Save Email</button>
+    <button id="clearBtn"data-translate="clear">Clear Email</button>
+
+    <div class="email-display" id="displayEmail"></div>
+  </div>
+
+
+ <script src="wa8.js" defer></script>
+</body>
+</html>
