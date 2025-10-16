@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light{
+    background-color: white;
+}
+.dark{
+    background-color:black;
+}
+        /* .box{
+            height:200px;
+            width: 200px;
+            border: 5px black solid;
+            background-color: red;
+            animation-name: moving-box;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out;
+            position: relative;
+
+        } */
+        @keyframes moving-box{
+            from {
+                left: 0px;
+                top:0px;
+                background-color:black;
+                border:5px black solid;
+            }
+            25%{
+                top:500px;
+                left:0px;
+                background-color:red;
+                border: 10px black solid;
+            }
+            50% {
+                left: 500px;
+                top:500px;
+                background-color: yellow;
+                border:5px black solid;
+            }
+            75%{
+                left:500px;
+                top:0px;
+                background-color: orange;
+                border: 10px black solid;
+            }
+            to {
+                left: 0px;
+                top:0px;
+                background-color:black;
+                border: 5px black solid;
+            }
+        }
+
+        .another-box{
+            height:100px;
+            width: 200px;
+            border: 5px black solid;
+            background-color: blue;
+            transition-property: width height background-color;
+            transition-duration: 1.5s;
+            transition-timing-function: ease-in-out;
+             /* animation-name: moving-box;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out;
+            position: relative; */
+         }
+         .another-box:hover{
+            height:100%;
+            width:100%;
+            background-color:red;
+         }
+         h1{
+            text-align: center;
+         }
+         .box{
+            height:1000px;
+            width:100%
+         }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <button id="bigbutton" class="another-box">
+        <h1>CLICK ME</h1>
+    </button>
+    </div>
+
+
+
+</body>
+    <script>
+let btn= document.querySelector('#bigbutton').addEventListener('click', toggleTheme);
+function toggleTheme() {
+  
+  const currentTheme = localStorage.getItem('userTheme') || 'light';
+  
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+  
+  setTheme(newTheme);
+}
+function setTheme(theme) {
+  localStorage.setItem('userTheme', theme);
+  document.body.className = theme;
+
+}
+    </script>
+</html>
