@@ -17,12 +17,12 @@ async function newTrivia(){
             throw Error(respone.statusText);
         }
         const json = await response.json();
- // console.log(json);
-        displayTrivia(json["question"]);
-        current.question = json["question"];
-        current.answer = json["answer"];
-        console.log(current.question);
-        console.log(current.answer);
+ console.log(json);
+        // displayTrivia(json["question"]);
+        // current.question = json["question"];
+        // current.answer = json["answer"];
+        // console.log(current.question);
+        // console.log(current.answer);
     }
     catch (err) {
         console.log(err);
