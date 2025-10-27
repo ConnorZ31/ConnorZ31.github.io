@@ -2,12 +2,13 @@ let triviaBtn = document.querySelector("#js-new-quote").addEventListener('click'
 
 let answerBtn =document.querySelector("#js-tweet").addEventListener('click', newPunchline);
 
+
 let current = {
     question: "",
     answer: "",
 }
 
-const endpoint = "https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun,Spooky?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart"
+const endpoint = "https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun,Spooky?type=twopart"
 
 async function newJoke(){
 //console.log("Success");
