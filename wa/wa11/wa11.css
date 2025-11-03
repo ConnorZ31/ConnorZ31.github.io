@@ -1,0 +1,8 @@
+    body { font-family: sans-serif; margin: 40px; }
+    .book { margin-bottom: 20px; display: flex; gap: 1rem; align-items: flex-start; }
+    img { height: 150px; }
+    button.favorite { background: none; border: none; cursor: pointer; font-size: 1.5rem; }
+    button.favorite.favorited { color: red; }
+    .box{
+        background-color: blanchedalmond;
+    }
