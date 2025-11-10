@@ -1,99 +1,143 @@
-html {
-    box-sizing: border-box;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-  }
-  
+    body { font-family: sans-serif; margin: 40px; }
+    .book { margin-bottom: 20px; display: flex; gap: 1rem; align-items: flex-start; }
+    img { height: 150px; }
+    button.favorite { background: none; border: none; cursor: pointer; font-size: 1.5rem; }
+    button.favorite.favorited { color: red; }
+    .box{
+        background-color: blanchedalmond;
+    }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+
+body {
+  background-color: #f6f2e9; 
+  color: #333;
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #4b2e05; 
+  letter-spacing: 1px;
+}
+
+
+#searchBox {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #c1a98b;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #fffdf8;
+}
+
+button {
+  padding: 10px 16px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  background-color: #8b5e34;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #a47243;
+}
+
+
+#showFavoritesBtn {
+  background-color: #4b2e05;
+}
+
+#showFavoritesBtn:hover {
+  background-color: #6a4110;
+}
+
+
+#results {
+  margin-top: 40px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fffdf8;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+#results h3 {
+  color: #2e1a03;
+  margin-bottom: 5px;
+}
+
+#results p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+#results button {
+  background-color: #6a4110;
+  font-size: 0.9em;
+}
+
+#results button:hover {
+  background-color: #8b5e34;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #e2d5c1;
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
   body {
-    font-family: "alphabet-soup-pro", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: #0091ffda;
+    padding: 20px;
   }
-  
-  .app {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-  }
-  
-  header {
-    width: 100%;
-    font-size: 30px;
-    text-align: center;
-    padding: 10px;
-    border-bottom: 1px solid #ebebeb;
-  }
-  
-  .quotes {
-    padding: 20px 50px;
-    min-height: 200px;
-  }
-  
-  .quote-text {
-    padding-bottom: 20px;
-    font-size: 25px;
-    color: black;
-  }
-  
-  .controls {
-    width: 100%;
-    padding: 20px 50px;
-  }
-  
-  .button {
-    display: block;
-    color: white;
-    border-radius: 4px;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-align: center;
-    width: 100%;
-    font-size: 20px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-  }
-  
-  .twitter {
-    background-color: #f2a41d;
-    text-decoration: none;
-  }
-  
-  .twitter:hover {
-    background-color: #bba91e;
-  }
-  
-  .new-quote {
-    background-color: #1e9211;
+
+  h1 {
+    font-size: 1.6em;
     margin-bottom: 15px;
   }
-  
-  .new-quote:hover {
-    background-color: #0a721b;
+
+  #searchBox {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+    font-size: 1em;
   }
-  
-  .new-quote:disabled {
-    background-color: #cccccc;
-    color: #666666;
-    cursor: not-allowed;
+
+  button {
+    width: 100%;
+    margin: 6px 0;
+    font-size: 1em;
   }
-  
-  @media screen and (max-width: 600px) {
-    .app {
-      width: 100%;
-    }
-    .quote-text {
-      font-size: 18px;
-    }
+
+  #results {
+    padding: 15px;
+    max-width: 100%;
+    font-size: 0.95em;
   }
+
+  #results h3 {
+    font-size: 1.1em;
+  }
+
+  #results p {
+    font-size: 0.95em;
+  }
+}
