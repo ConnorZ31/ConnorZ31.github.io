@@ -1,43 +1,77 @@
-let triviaBtn = document.querySelector("#js-new-quote").addEventListener('click', newJoke);
+ let players = [];
 
-let answerBtn =document.querySelector("#js-tweet").addEventListener('click', newPunchline);
+    function generatePlayers() {
+      players = [];
+      for (let i = 0; i < 20; i++) {
+        players.push({
+          id: i + 1,
+          mmr: Math.floor(Math.random() * 4000) + 500
+        });
+      }
+      displayPlayers();
+      document.getElementById("matches").innerHTML = "";
+    }
 
+    function displayPlayers() {
+      const container = document.getElementById("players");
+      container.innerHTML = "";
 
-let current = {
-    question: "",
-    answer: "",
-}
+      players.forEach(p => {
+        const div = document.createElement("div");
+        div.className = "player";
+        div.innerHTML = `Player ${p.id}<br>MMR: <span>${p.mmr}</span>`;
+        container.appendChild(div);
+      });
+    }
 
-const endpoint = "https://api.opendota.com/api/distributions"
+    function runMatchmaking() {
+      const tolerance = parseInt(document.getElementById("tolerance").value);
 
-async function newJoke(){
-//console.log("Success");
-    try {
-        const response = await fetch(endpoint);
-        if (!response.ok){
-            throw Error(respone.statusText);
+      // Sort players by MMR
+      const sorted = [...players].sort((a, b) => a.mmr - b.mmr);
+      const matches = [];
+
+      // Iterate through sorted players and match them
+      for (let i = 0; i < sorted.length - 1; i++) {
+        const p1 = sorted[i];
+        const p2 = sorted[i + 1];
+
+        if (Math.abs(p1.mmr - p2.mmr) <= tolerance) {
+          matches.push([p1, p2]);
+          i++; // Skip next since it's paired
         }
-        const json = await response.json();
- console.log(json);
-        displayJoke(json["setup"]);
-        console.log(current.newJoke);
-        console.log(current.punchline);
-    }
-    catch (err) {
-        console.log(err);
-        alert('Failed to get new joke')
-    }
-}
-function displayJoke(question) {
-    const setupText = document.querySelector('#js-quote-text');
-    setupText.textContent = question;
-    const deliveryText = document.querySelector("#js-answer-text");
-    deliveryText.textContent = "";
-}
-function newPunchline(){
-    console.log("Success == answer!");
-    const deliveryText = document.querySelector("#js-answer-text");
-    deliveryText.textContent = current.punchline;
+      }
 
-}
-newJoke();
+      displayMatches(matches);
+    }
+
+    function displayMatches(matches) {
+      const container = document.getElementById("matches");
+      container.innerHTML = "";
+
+      if (matches.length === 0) {
+        container.innerHTML = "<p>No matches formed with current tolerance.</p>";
+        return;
+      }
+
+      matches.forEach((pair, index) => {
+        const div = document.createElement("div");
+        div.className = "match";
+        div.innerHTML = `
+          <strong>Match ${index + 1}</strong><br>
+          P${pair[0].id} (${pair[0].mmr})<br>
+          vs<br>
+          P${pair[1].id} (${pair[1].mmr})
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    // Slider value update
+    const slider = document.getElementById("tolerance");
+    slider.addEventListener("input", () => {
+      document.getElementById("tolValue").innerText = slider.value;
+    });
+
+    // Initial player generation
+    generatePlayers();
